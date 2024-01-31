@@ -1,6 +1,8 @@
 const botaoPlayPause = document.getElementById('play-pause');
-const botaoavancar = document.getElementById('proximo');
+const botaoAvancar = document.getElementById('proximo');
 const botaoVoltar = document.getElementById('anterior');
+const capitulo = document.getElementById('capitulo');
+
 const audiocapitulo = document.getElementById('audio-capitulo');
 
 const numeroCapitulos = 10;
@@ -38,6 +40,11 @@ function PlayOrPause() {
 
 }
 
+function trocarTitulo(){
+
+    capitulo.innerText = "Capítulo " + capituloAtual;
+}
+
 function proximaFaixa() {
 
     if (capituloAtual === numeroCapitulos) {
@@ -51,36 +58,37 @@ function proximaFaixa() {
 
     audiocapitulo.src = "/Aplicação/books/dom-casmurro/" + capituloAtual + ".mp3";
     tocarFaixa();
+    taTocando = true;
+    trocarTitulo();
 
 }
 
-function FaixaAnterior() {
+function VoltarFaixa() {
 
-    if (capituloAtual === numeroCapitulos) {
+    if (capituloAtual === 1) {
 
-        capituloAtual = 1;
+        capituloAtual = numeroCapitulos;
 
     } else {
 
         capituloAtual--; // capituloAtual = capituloatual-1;
-    }
-
-    if (capituloAtual === 0) {
-        capituloAtual = 10;
-
-    }
+    }  
 
     audiocapitulo.src = "/Aplicação/books/dom-casmurro/" + capituloAtual + ".mp3";
     tocarFaixa();
+    taTocando = false;
+    trocarTitulo();
 
 }
+
+
 
 
 // botaoPlayPause.onclick(tocarFaixa); // pode usar este tambem
 // função suprema
 botaoPlayPause.addEventListener('click', PlayOrPause);
-botaoavancar.addEventListener('click', proximaFaixa);
-botaoVoltar.addEventListener('click', FaixaAnterior);
+botaoAvancar.addEventListener('click', proximaFaixa);
+botaoVoltar.addEventListener('click', VoltarFaixa);
 
 
 
