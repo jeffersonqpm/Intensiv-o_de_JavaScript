@@ -80,7 +80,7 @@ function VoltarFaixa() {
 
     audiocapitulo.src = "/Aplicação/books/dom-casmurro/" + capituloAtual + ".mp3";
     tocarFaixa();
-    taTocando = false;
+    taTocando = true;
     trocarTitulo();
 
 }
