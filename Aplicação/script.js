@@ -105,8 +105,7 @@ function mudarTema() {
 }
 
 
-// botaoPlayPause.onclick(tocarFaixa); // pode usar este tambem
-// função suprema
+
 botaoPlayPause.addEventListener('click', PlayOrPause);
 botaoAvancar.addEventListener('click', proximaFaixa);
 botaoVoltar.addEventListener('click', VoltarFaixa);
