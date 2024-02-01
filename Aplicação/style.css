@@ -35,6 +35,12 @@
   align-items: center;
 }
 
+.container-aplicativo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 button {
   background-color: inherit;
   color: inherit;
@@ -82,6 +88,16 @@ button {
 
 #thema {
   /* font-size: 3rem; */
+  /* font-size: 30px;*/
+
+
+  /* display: flex;   inicia o display flex */
+  /* align-items: baseline; alinha os itens na vertical */
+  justify-content: center; /* alinha os itens na horizontal */
   font-size: 30px;
-  /* margin-left:1250px; */
-}
+  margin: 5px;
+
+
+} 
+
+

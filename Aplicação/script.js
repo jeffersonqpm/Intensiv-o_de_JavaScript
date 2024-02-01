@@ -91,15 +91,15 @@ function mudarTema() {
         corpo.classList.remove('modoClaro');
         corpo.classList.add('modoEscuro');
         tema = true;
-        botaoTema.classList.remove('bi-brightness-alt-low');
-        botaoTema.classList.add('bi-brightness-alt-low');
+        botaoTema.classList.remove('bi-lightbulb-off-fill');
+        botaoTema.classList.add('bi-lightbulb-fill');
 
     } else {
         corpo.classList.remove('modoEscuro');
         corpo.classList.add('modoClaro');
         tema = false;
-        botaoTema.classList.remove('bi-brightness-alt-low');
-        botaoTema.classList.add('bi-brightness-alt-low');
+        botaoTema.classList.remove('bi-lightbulb-fill');
+        botaoTema.classList.add('bi-lightbulb-off-fill');
 
     }
 }
