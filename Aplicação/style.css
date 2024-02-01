@@ -1,5 +1,26 @@
-body {
+/* body {
   background-image: linear-gradient(#3b1566, #5f4da8);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #d6d6ea;
+} */
+
+.modoClaro{
+    
+  background-image: linear-gradient(#3b1566, #5f4da8);
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  color: #d6d6ea;
+}
+
+.modoEscuro{
+  background-color: black;
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -55,4 +76,12 @@ button {
   width: 100%;
   display: flex;
   justify-content: space-around;
+}
+
+/* MEU */
+
+#thema {
+  /* font-size: 3rem; */
+  font-size: 30px;
+  /* margin-left:1250px; */
 }

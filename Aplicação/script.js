@@ -9,6 +9,10 @@ const numeroCapitulos = 10;
 let taTocando = false;
 let capituloAtual = 1;
 
+const botaoTema = document.getElementById('thema');
+const corpo = document.getElementById('corpo');
+let tema = false;
+
 function tocarFaixa() {
 
     audiocapitulo.play();
@@ -40,7 +44,7 @@ function PlayOrPause() {
 
 }
 
-function trocarTitulo(){
+function trocarTitulo() {
 
     capitulo.innerText = "Capítulo " + capituloAtual;
 }
@@ -72,7 +76,7 @@ function VoltarFaixa() {
     } else {
 
         capituloAtual--; // capituloAtual = capituloatual-1;
-    }  
+    }
 
     audiocapitulo.src = "/Aplicação/books/dom-casmurro/" + capituloAtual + ".mp3";
     tocarFaixa();
@@ -81,7 +85,24 @@ function VoltarFaixa() {
 
 }
 
+function mudarTema() {
 
+    if (tema === false) {
+        corpo.classList.remove('modoClaro');
+        corpo.classList.add('modoEscuro');
+        tema = true;
+        botaoTema.classList.remove('bi-brightness-alt-low');
+        botaoTema.classList.add('bi-brightness-alt-low');
+
+    } else {
+        corpo.classList.remove('modoEscuro');
+        corpo.classList.add('modoClaro');
+        tema = false;
+        botaoTema.classList.remove('bi-brightness-alt-low');
+        botaoTema.classList.add('bi-brightness-alt-low');
+
+    }
+}
 
 
 // botaoPlayPause.onclick(tocarFaixa); // pode usar este tambem
@@ -89,6 +110,8 @@ function VoltarFaixa() {
 botaoPlayPause.addEventListener('click', PlayOrPause);
 botaoAvancar.addEventListener('click', proximaFaixa);
 botaoVoltar.addEventListener('click', VoltarFaixa);
+
+botaoTema.addEventListener('click', mudarTema);
 
 
 
