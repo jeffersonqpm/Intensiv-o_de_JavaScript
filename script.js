@@ -2,10 +2,13 @@ const botaoPayPause = document.getElementById('play-pause');
 const botaoProximo = document.getElementById('proximo');
 const botaoVoltar = document.getElementById('anterior');
 const audio = document.getElementById('audio-capitulo');
+const botaoTema = document.getElementById('thema');
+const corpoPrincipal = document.getElementById('corpo');
 
 let tocando = false;
 const numeroCapitulo = 10;
 let capituloAtual = 1;
+let temaEscuro = false;
 
 
 
@@ -60,7 +63,22 @@ function voltar(){
     play();
 }
 
+function mudarTema(){
+
+        if(temaEscuro === false){
+            corpoPrincipal.classList.remove('modoClaro');
+            corpoPrincipal.classList.add('modoEscuro');
+            temaEscuro = true;
+        }else{
+            corpoPrincipal.classList.remove('modoEscuro');
+            corpoPrincipal.classList.add('modoClaro');
+            temaEscuro = false;
+
+        }
+}
+
 
 botaoPayPause.addEventListener('click', playOrPause)
 botaoProximo.addEventListener('click', proximo);
 botaoVoltar.addEventListener('click', voltar);
+botaoTema.addEventListener('click', mudarTema);
