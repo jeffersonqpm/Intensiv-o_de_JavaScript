@@ -46,7 +46,7 @@ function proximo() {
         capituloAtual++;
     }
 
-    audio.src = "/books/dom-casmurro/" + capituloAtual + ".mp3"
+    audio.src = "./books/dom-casmurro/" + capituloAtual + ".mp3"
     play();
 
 }
@@ -59,7 +59,7 @@ function voltar(){
     }else{
         capituloAtual--;
     }
-    audio.src = "/books/dom-casmurro/" + capituloAtual + ".mp3"
+    audio.src = "./books/dom-casmurro/" + capituloAtual + ".mp3"
     play();
 }
 
