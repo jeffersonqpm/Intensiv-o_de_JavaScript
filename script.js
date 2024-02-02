@@ -4,6 +4,7 @@ const botaoVoltar = document.getElementById('anterior');
 const audio = document.getElementById('audio-capitulo');
 const botaoTema = document.getElementById('thema');
 const corpoPrincipal = document.getElementById('corpo');
+const titulo = document.getElementById('capitulo');
 
 let tocando = false;
 const numeroCapitulo = 10;
@@ -48,6 +49,7 @@ function proximo() {
 
     audio.src = "./books/dom-casmurro/" + capituloAtual + ".mp3"
     play();
+    mudarTitulo();
 
 }
 
@@ -61,6 +63,7 @@ function voltar(){
     }
     audio.src = "./books/dom-casmurro/" + capituloAtual + ".mp3"
     play();
+    mudarTitulo();
 }
 
 function mudarTema(){
@@ -75,6 +78,11 @@ function mudarTema(){
             temaEscuro = false;
 
         }
+}
+
+function mudarTitulo(){
+
+    titulo.innerText = "Sessão " + capituloAtual;
 }
 
 
