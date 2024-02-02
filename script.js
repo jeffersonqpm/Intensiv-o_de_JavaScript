@@ -90,3 +90,4 @@ botaoPayPause.addEventListener('click', playOrPause)
 botaoProximo.addEventListener('click', proximo);
 botaoVoltar.addEventListener('click', voltar);
 botaoTema.addEventListener('click', mudarTema);
+
