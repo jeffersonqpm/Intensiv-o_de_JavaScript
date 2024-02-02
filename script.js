@@ -1,117 +1,66 @@
-const botaoPlayPause = document.getElementById('play-pause');
-const botaoAvancar = document.getElementById('proximo');
+const botaoPayPause = document.getElementById('play-pause');
+const botaoProximo = document.getElementById('proximo');
 const botaoVoltar = document.getElementById('anterior');
-const capitulo = document.getElementById('capitulo');
+const audio = document.getElementById('audio-capitulo');
 
-const audiocapitulo = document.getElementById('audio-capitulo');
-
-const numeroCapitulos = 10;
-let taTocando = false;
+let tocando = false;
+const numeroCapitulo = 10;
 let capituloAtual = 1;
 
-const botaoTema = document.getElementById('thema');
-const corpo = document.getElementById('corpo');
-let tema = false;
 
-function tocarFaixa() {
 
-    audiocapitulo.play();
-    botaoPlayPause.classList.remove('bi-play-circle-fill');
-    botaoPlayPause.classList.add('bi-pause-circle-fill');
+function play() {
+
+    audio.play();
+    botaoPayPause.classList.remove('bi-play-circle-fill');
+    botaoPayPause.classList.add('bi-pause-circle-fill');
+    tocando = true;
 }
 
-function pausarFaixa() {
+function pause() {
 
-    audiocapitulo.pause();
-    botaoPlayPause.classList.remove('bi-pause-circle-fill');
-    botaoPlayPause.classList.add('bi-play-circle-fill');
-
+    audio.pause();
+    botaoPayPause.classList.remove('bi-pause-circle-fill');
+    botaoPayPause.classList.add('bi-play-circle-fill');
+    tocando = false;
 }
 
+function playOrPause() {
 
-function PlayOrPause() {
-    if (taTocando === false) {
-
-        tocarFaixa();
-        taTocando = true;
+    if (tocando === false) {
+        play();
 
     } else {
-        pausarFaixa();
-        taTocando = false;
-        // botaoPlayPause.addEventListener('click', pausarFaixa);
+        pause();
     }
-
-
 }
 
-function trocarTitulo() {
+function proximo() {
 
-    capitulo.innerText = "Capítulo " + capituloAtual;
-}
-
-function proximaFaixa() {
-
-    if (capituloAtual === numeroCapitulos) {
-
+    if (capituloAtual === numeroCapitulo) {
         capituloAtual = 1;
-
     } else {
-
-        capituloAtual++; // capituloAtual = capituloatual+1;
+        capituloAtual++;
     }
 
-    audiocapitulo.src = "/Aplicação/books/dom-casmurro/" + capituloAtual + ".mp3";
-    tocarFaixa();
-    taTocando = true;
-    trocarTitulo();
+    audio.src = "/books/dom-casmurro/" + capituloAtual + ".mp3"
+    play();
 
 }
 
-function VoltarFaixa() {
+function voltar(){
 
-    if (capituloAtual === 1) {
+    if(capituloAtual ===1){
+        capituloAtual = numeroCapitulo;
 
-        capituloAtual = numeroCapitulos;
-
-    } else {
-
-        capituloAtual--; // capituloAtual = capituloatual-1;
+    }else{
+        capituloAtual--;
     }
-
-    audiocapitulo.src = "/Aplicação/books/dom-casmurro/" + capituloAtual + ".mp3";
-    tocarFaixa();
-    taTocando = true;
-    trocarTitulo();
-
-}
-
-function mudarTema() {
-
-    if (tema === false) {
-        corpo.classList.remove('modoClaro');
-        corpo.classList.add('modoEscuro');
-        tema = true;
-        botaoTema.classList.remove('bi-lightbulb-off-fill');
-        botaoTema.classList.add('bi-lightbulb-fill');
-
-    } else {
-        corpo.classList.remove('modoEscuro');
-        corpo.classList.add('modoClaro');
-        tema = false;
-        botaoTema.classList.remove('bi-lightbulb-fill');
-        botaoTema.classList.add('bi-lightbulb-off-fill');
-
-    }
+    audio.src = "/books/dom-casmurro/" + capituloAtual + ".mp3"
+    play();
 }
 
 
-
-botaoPlayPause.addEventListener('click', PlayOrPause);
-botaoAvancar.addEventListener('click', proximaFaixa);
-botaoVoltar.addEventListener('click', VoltarFaixa);
-
-botaoTema.addEventListener('click', mudarTema);
-
-
-
-
+botaoPayPause.addEventListener('click', playOrPause)
+botaoProximo.addEventListener('click', proximo);
+botaoVoltar.addEventListener('click', voltar);
