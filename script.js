@@ -1,8 +1,11 @@
 const botaoPayPause = document.getElementById('play-pause');
 const botaoProximo = document.getElementById('proximo');
 const botaoVoltar = document.getElementById('anterior');
+
 const audio = document.getElementById('audio-capitulo');
+
 const botaoTema = document.getElementById('thema');
+
 const corpoPrincipal = document.getElementById('corpo');
 const titulo = document.getElementById('capitulo');
 
@@ -84,6 +87,8 @@ function mudarTitulo(){
 
     titulo.innerText = "Sessão " + capituloAtual;
 }
+
+
 
 
 botaoPayPause.addEventListener('click', playOrPause)
