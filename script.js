@@ -1,15 +1,21 @@
-const botaoPayPause = document.getElementById('play-pause');
-const botaoProximo = document.getElementById('proximo');
-const botaoVoltar = document.getElementById('anterior');
+let botaoPayPause = document.getElementById('play-pause');
+let botaoProximo = document.getElementById('proximo');
+let botaoVoltar = document.getElementById('anterior');
+
 const audio = document.getElementById('audio-capitulo');
+
 const botaoTema = document.getElementById('thema');
+let botaoCor = document.getElementById('botao-color');
 const corpoPrincipal = document.getElementById('corpo');
+
 const titulo = document.getElementById('capitulo');
 
 let tocando = false;
 const numeroCapitulo = 10;
 let capituloAtual = 1;
 let temaEscuro = false;
+
+let corBotao = 1;
 
 
 
@@ -53,12 +59,12 @@ function proximo() {
 
 }
 
-function voltar(){
+function voltar() {
 
-    if(capituloAtual ===1){
+    if (capituloAtual === 1) {
         capituloAtual = numeroCapitulo;
 
-    }else{
+    } else {
         capituloAtual--;
     }
     audio.src = "./books/dom-casmurro/" + capituloAtual + ".mp3"
@@ -66,23 +72,75 @@ function voltar(){
     mudarTitulo();
 }
 
-function mudarTema(){
+function mudarTema() {
 
-        if(temaEscuro === false){
-            corpoPrincipal.classList.remove('modoClaro');
-            corpoPrincipal.classList.add('modoEscuro');
-            temaEscuro = true;
-        }else{
-            corpoPrincipal.classList.remove('modoEscuro');
-            corpoPrincipal.classList.add('modoClaro');
-            temaEscuro = false;
+    if (temaEscuro === false) {
+        corpoPrincipal.classList.remove('modoClaro');
+        corpoPrincipal.classList.add('modoEscuro');
+        temaEscuro = true;
+    } else {
+        corpoPrincipal.classList.remove('modoEscuro');
+        corpoPrincipal.classList.add('modoClaro');
+        temaEscuro = false;
 
-        }
+    }
 }
 
-function mudarTitulo(){
+function mudarTitulo() {
 
     titulo.innerText = "Sessão " + capituloAtual;
+}
+
+
+function colorButton() {
+
+    if (corBotao === 1) {
+
+        botaoPayPause = document.getElementById('play-pause').style.color = 'blue';
+        botaoProximo = document.getElementById('proximo').style.color = 'blue';
+        botaoVoltar = document.getElementById('anterior').style.color = 'blue';
+        corBotao = 2;
+        botaoPayPause = document.getElementById('play-pause');
+
+    } else if (corBotao === 2) {
+
+        botaoPayPause = document.getElementById('play-pause').style.color = 'rgb(192, 33, 33)';
+        botaoProximo = document.getElementById('proximo').style.color = 'rgb(192, 33, 33)';
+        botaoVoltar = document.getElementById('anterior').style.color = 'rgb(192, 33, 33)';
+        corBotao = 3;
+        botaoPayPause = document.getElementById('play-pause');
+
+    } else if (corBotao === 3) {
+
+        botaoPayPause = document.getElementById('play-pause').style.color = 'rgb(176, 192, 33)';
+        botaoProximo = document.getElementById('proximo').style.color = 'rgb(176, 192, 33)';
+        botaoVoltar = document.getElementById('anterior').style.color = 'rgb(176, 192, 33)';
+        corBotao = 4;
+        botaoPayPause = document.getElementById('play-pause');
+
+    } else if (corBotao === 4) {
+
+        botaoPayPause = document.getElementById('play-pause').style.color = '#FFA500';
+        botaoProximo = document.getElementById('proximo').style.color = '#FFA500';
+        botaoVoltar = document.getElementById('anterior').style.color = '#FFA500';
+        corBotao = 5;
+        botaoPayPause = document.getElementById('play-pause');
+
+    } else if (corBotao === 5) {
+
+        botaoPayPause = document.getElementById('play-pause').style.color = '#C0FF3E';
+        botaoProximo = document.getElementById('proximo').style.color = '#C0FF3E';
+        botaoVoltar = document.getElementById('anterior').style.color = '#C0FF3E';
+        corBotao = 6;
+        botaoPayPause = document.getElementById('play-pause');
+
+    } else {
+        corBotao = 1;
+        botaoPayPause = document.getElementById('play-pause').style.color = 'white';
+        botaoProximo = document.getElementById('proximo').style.color = 'white';
+        botaoVoltar = document.getElementById('anterior').style.color = 'white';
+        botaoPayPause = document.getElementById('play-pause');
+    }
 }
 
 
@@ -90,4 +148,5 @@ botaoPayPause.addEventListener('click', playOrPause)
 botaoProximo.addEventListener('click', proximo);
 botaoVoltar.addEventListener('click', voltar);
 botaoTema.addEventListener('click', mudarTema);
+botaoCor.addEventListener('click', colorButton)
 
