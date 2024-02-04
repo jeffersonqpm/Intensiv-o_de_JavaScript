@@ -109,6 +109,8 @@ function colorButton() {
         botaoVoltar = document.getElementById('anterior').style.color = 'rgb(192, 33, 33)';
         corBotao = 3;
         botaoPayPause = document.getElementById('play-pause');
+        botaoProximo = document.getElementById('proximo');
+        botaoVoltar = document.getElementById('anterior');
 
     } else if (corBotao === 3) {
 
