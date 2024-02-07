@@ -78,10 +78,14 @@ function mudarTema() {
         corpoPrincipal.classList.remove('modoClaro');
         corpoPrincipal.classList.add('modoEscuro');
         temaEscuro = true;
+        botaoTema.classList.remove('bi-lightbulb-fill');
+        botaoTema.classList.add('bi-lightbulb');
     } else {
         corpoPrincipal.classList.remove('modoEscuro');
         corpoPrincipal.classList.add('modoClaro');
         temaEscuro = false;
+        botaoTema.classList.remove('bi-lightbulb');
+        botaoTema.classList.add('bi-lightbulb-fill');
 
     }
 }
@@ -94,55 +98,108 @@ function mudarTitulo() {
 
 function colorButton() {
 
-    if (corBotao === 1) {
 
-        botaoPayPause = document.getElementById('play-pause').style.color = 'blue';
-        botaoProximo = document.getElementById('proximo').style.color = 'blue';
-        botaoVoltar = document.getElementById('anterior').style.color = 'blue';
-        corBotao = 2;
-        botaoPayPause = document.getElementById('play-pause');
+    switch (corBotao) {
+        case 1:
 
-    } else if (corBotao === 2) {
+            botaoPayPause.style.color = "blue";
+            botaoProximo.style.color = "blue";
+            botaoVoltar.style.color = "blue";
+            corBotao = 2;
+            break;
 
-        botaoPayPause = document.getElementById('play-pause').style.color = 'rgb(192, 33, 33)';
-        botaoProximo = document.getElementById('proximo').style.color = 'rgb(192, 33, 33)';
-        botaoVoltar = document.getElementById('anterior').style.color = 'rgb(192, 33, 33)';
-        corBotao = 3;
-        botaoPayPause = document.getElementById('play-pause');
-        botaoProximo = document.getElementById('proximo');
-        botaoVoltar = document.getElementById('anterior');
+        case 2:
+            botaoPayPause.style.color = "rgb(192, 33, 33)";
+            botaoProximo.style.color = "rgb(192, 33, 33)";
+            botaoVoltar.style.color = "rgb(192, 33, 33)";
+            corBotao = 3;
+            break;
 
-    } else if (corBotao === 3) {
+        case 3:
+            botaoPayPause.style.color = "rgb(176, 192, 33)";
+            botaoProximo.style.color = "rgb(176, 192, 33)";
+            botaoVoltar.style.color = "rgb(176, 192, 33)";
+            corBotao = 4;
+            break;
 
-        botaoPayPause = document.getElementById('play-pause').style.color = 'rgb(176, 192, 33)';
-        botaoProximo = document.getElementById('proximo').style.color = 'rgb(176, 192, 33)';
-        botaoVoltar = document.getElementById('anterior').style.color = 'rgb(176, 192, 33)';
-        corBotao = 4;
-        botaoPayPause = document.getElementById('play-pause');
+        case 4:
 
-    } else if (corBotao === 4) {
+            botaoPayPause.style.color = "#FFA500";
+            botaoProximo.style.color = "#FFA500";
+            botaoVoltar.style.color = "#FFA500";
+            corBotao = 5;
+            break;
 
-        botaoPayPause = document.getElementById('play-pause').style.color = '#FFA500';
-        botaoProximo = document.getElementById('proximo').style.color = '#FFA500';
-        botaoVoltar = document.getElementById('anterior').style.color = '#FFA500';
-        corBotao = 5;
-        botaoPayPause = document.getElementById('play-pause');
+        case 5:
+            botaoPayPause.style.color = "#C0FF3E";
+            botaoProximo.style.color = "#C0FF3E";
+            botaoVoltar.style.color = "#C0FF3E";
+            corBotao = 6;
+            break;
 
-    } else if (corBotao === 5) {
+        default:
+            botaoPayPause.style.color = "inherit";
+            botaoProximo.style.color = "inherit";
+            botaoVoltar.style.color = "inherit";
+            corBotao = 1;
+            break;
 
-        botaoPayPause = document.getElementById('play-pause').style.color = '#C0FF3E';
-        botaoProximo = document.getElementById('proximo').style.color = '#C0FF3E';
-        botaoVoltar = document.getElementById('anterior').style.color = '#C0FF3E';
-        corBotao = 6;
-        botaoPayPause = document.getElementById('play-pause');
-
-    } else {
-        corBotao = 1;
-        botaoPayPause = document.getElementById('play-pause').style.color = 'white';
-        botaoProximo = document.getElementById('proximo').style.color = 'white';
-        botaoVoltar = document.getElementById('anterior').style.color = 'white';
-        botaoPayPause = document.getElementById('play-pause');
     }
+
+    // outra opção
+
+    // if (corBotao === 1) {
+
+    //     botaoPayPause = document.getElementById('play-pause').style.color = 'blue';
+    //     botaoProximo = document.getElementById('proximo').style.color = 'blue';
+    //     botaoVoltar = document.getElementById('anterior').style.color = 'blue';
+    //     corBotao = 2;
+    //     botaoPayPause = document.getElementById('play-pause');
+
+    // } else if (corBotao === 2) {
+
+    //     botaoPayPause = document.getElementById('play-pause').style.color = 'rgb(192, 33, 33)';
+    //     botaoProximo = document.getElementById('proximo').style.color = 'rgb(192, 33, 33)';
+    //     botaoVoltar = document.getElementById('anterior').style.color = 'rgb(192, 33, 33)';
+    //     corBotao = 3;
+    //     botaoPayPause = document.getElementById('play-pause');
+    //     botaoProximo = document.getElementById('proximo');
+    //     botaoVoltar = document.getElementById('anterior');
+
+    // } else if (corBotao === 3) {
+
+    //     botaoPayPause = document.getElementById('play-pause').style.color = 'rgb(176, 192, 33)';
+    //     botaoProximo = document.getElementById('proximo').style.color = 'rgb(176, 192, 33)';
+    //     botaoVoltar = document.getElementById('anterior').style.color = 'rgb(176, 192, 33)';
+    //     corBotao = 4;
+    //     botaoPayPause = document.getElementById('play-pause');
+
+    // } else if (corBotao === 4) {
+
+    //     botaoPayPause = document.getElementById('play-pause').style.color = '#FFA500';
+    //     botaoProximo = document.getElementById('proximo').style.color = '#FFA500';
+    //     botaoVoltar = document.getElementById('anterior').style.color = '#FFA500';
+    //     corBotao = 5;
+    //     botaoPayPause = document.getElementById('play-pause');
+
+    // } else if (corBotao === 5) {
+
+    //     botaoPayPause = document.getElementById('play-pause').style.color = '#C0FF3E';
+    //     botaoProximo = document.getElementById('proximo').style.color = '#C0FF3E';
+    //     botaoVoltar = document.getElementById('anterior').style.color = '#C0FF3E';
+    //     corBotao = 6;
+    //     botaoPayPause = document.getElementById('play-pause');
+
+    // } else {
+    //     corBotao = 1;
+    //     botaoPayPause = document.getElementById('play-pause').style.color = 'white';
+    //     botaoProximo = document.getElementById('proximo').style.color = 'white';
+    //     botaoVoltar = document.getElementById('anterior').style.color = 'white';
+    //     botaoPayPause = document.getElementById('play-pause');
+    // }
+
+
+
 }
 
 
