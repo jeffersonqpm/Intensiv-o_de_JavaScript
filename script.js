@@ -146,7 +146,7 @@ function colorButton() {
 
     }
 
-    // outra opção
+    // SEGUNDA OPÇÃO
 
     // if (corBotao === 1) {
 
