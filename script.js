@@ -97,7 +97,7 @@ function mudarTitulo() {
 
 
 function colorButton() {
-    continuando
+    
 
     switch (corBotao) {
         case 1:
